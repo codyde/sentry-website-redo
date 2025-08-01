@@ -4,7 +4,7 @@ import { Github, Twitter, Linkedin, Youtube } from 'lucide-react';
 const Footer = () => {
   const footerSections = [
     {
-      title: "Product",
+      title: "PRODUCT",
       links: [
         "Error Monitoring",
         "Performance Monitoring", 
@@ -15,7 +15,7 @@ const Footer = () => {
       ]
     },
     {
-      title: "Resources",
+      title: "RESOURCES",
       links: [
         "Documentation",
         "API Reference",
@@ -26,7 +26,7 @@ const Footer = () => {
       ]
     },
     {
-      title: "Company",
+      title: "COMPANY",
       links: [
         "About Us",
         "Careers",
@@ -37,7 +37,7 @@ const Footer = () => {
       ]
     },
     {
-      title: "Support",
+      title: "SUPPORT",
       links: [
         "Help Center",
         "Contact Support",
@@ -50,43 +50,45 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="border-t border-gray-200 pt-20 pb-8">
-      <div className="max-w-6xl mx-auto px-6">
+    <footer className="border-t-[4px] border-neo-black pt-20 pb-8 bg-neo-black relative">
+      <div className="absolute inset-0 neo-grid-pattern opacity-10"></div>
+      
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-7 h-7 bg-black rounded-md flex items-center justify-center">
-                <span className="text-white font-bold text-xs">S</span>
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="w-12 h-12 bg-neo-yellow flex items-center justify-center border-[3px] border-neo-white shadow-neo-sm">
+                <span className="text-neo-black font-display font-bold text-xl">S</span>
               </div>
-              <span className="text-gray-900 font-semibold text-lg">Sentry</span>
+              <span className="text-neo-white font-display font-bold text-2xl">SENTRY</span>
             </div>
-            <p className="text-gray-600 mb-6 max-w-md">
+            <p className="text-neo-white mb-6 max-w-md font-bold uppercase">
               Application monitoring that helps developers ship better software faster. 
               Catch errors, track performance, and monitor releases.
             </p>
             <div className="flex items-center space-x-4">
-              <a href="#" className="text-gray-400 hover:text-gray-600 transition-colors duration-200">
-                <Github className="w-5 h-5" />
+              <a href="#" className="bg-neo-pink w-12 h-12 flex items-center justify-center border-[3px] border-neo-white hover:rotate-6 transition-all duration-150">
+                <Github className="w-6 h-6 text-neo-black" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-gray-600 transition-colors duration-200">
-                <Twitter className="w-5 h-5" />
+              <a href="#" className="bg-neo-blue w-12 h-12 flex items-center justify-center border-[3px] border-neo-white hover:rotate-6 transition-all duration-150">
+                <Twitter className="w-6 h-6 text-neo-white" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-gray-600 transition-colors duration-200">
-                <Linkedin className="w-5 h-5" />
+              <a href="#" className="bg-neo-green w-12 h-12 flex items-center justify-center border-[3px] border-neo-white hover:rotate-6 transition-all duration-150">
+                <Linkedin className="w-6 h-6 text-neo-black" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-gray-600 transition-colors duration-200">
-                <Youtube className="w-5 h-5" />
+              <a href="#" className="bg-neo-red w-12 h-12 flex items-center justify-center border-[3px] border-neo-white hover:rotate-6 transition-all duration-150">
+                <Youtube className="w-6 h-6 text-neo-white" />
               </a>
             </div>
           </div>
 
           {footerSections.map((section, index) => (
             <div key={index}>
-              <h3 className="text-gray-900 font-semibold mb-4">{section.title}</h3>
+              <h3 className="text-neo-yellow font-display font-bold mb-4 text-lg">{section.title}</h3>
               <ul className="space-y-3">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm">
+                    <a href="#" className="text-neo-white hover:text-neo-yellow transition-colors duration-200 font-bold text-sm uppercase">
                       {link}
                     </a>
                   </li>
@@ -96,19 +98,19 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="border-t border-gray-200 pt-8">
+        <div className="border-t-[3px] border-neo-white pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-            <div className="text-gray-600 text-sm">
-              © 2025 Sentry. All rights reserved.
+            <div className="text-neo-yellow font-display font-bold">
+              © 2025 SENTRY. ALL RIGHTS RESERVED.
             </div>
             <div className="flex items-center space-x-6 text-sm">
-              <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+              <a href="#" className="text-neo-white hover:text-neo-yellow font-bold transition-colors duration-200 uppercase">
                 Terms of Service
               </a>
-              <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+              <a href="#" className="text-neo-white hover:text-neo-yellow font-bold transition-colors duration-200 uppercase">
                 Privacy Policy
               </a>
-              <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+              <a href="#" className="text-neo-white hover:text-neo-yellow font-bold transition-colors duration-200 uppercase">
                 Cookie Policy
               </a>
             </div>

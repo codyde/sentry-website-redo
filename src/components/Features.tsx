@@ -4,54 +4,72 @@ import { AlertTriangle, BarChart3, GitBranch, Users, Clock, Shield } from 'lucid
 const Features = () => {
   const features = [
     {
-      icon: <AlertTriangle className="w-6 h-6" />,
-      title: "Error Monitoring",
-      description: "Catch every error, exception, and crash in real-time with detailed stack traces and context.",
-      color: "bg-red-100 text-red-600"
+      icon: <AlertTriangle className="w-8 h-8" />,
+      title: "ERROR MONITORING",
+      description: "Catch every error, exception, and crash in real-time with detailed stack traces.",
+      bgColor: "bg-neo-red",
+      iconBg: "bg-neo-yellow",
+      textColor: "text-neo-white",
+      iconColor: "text-neo-black"
     },
     {
-      icon: <BarChart3 className="w-6 h-6" />,
-      title: "Performance Monitoring",
-      description: "Track application performance, identify bottlenecks, and optimize user experience.",
-      color: "bg-purple-100 text-purple-600"
+      icon: <BarChart3 className="w-8 h-8" />,
+      title: "PERFORMANCE TRACKING",
+      description: "Track application performance, identify bottlenecks, optimize user experience.",
+      bgColor: "bg-neo-purple",
+      iconBg: "bg-neo-green",
+      textColor: "text-neo-white",
+      iconColor: "text-neo-black"
     },
     {
-      icon: <GitBranch className="w-6 h-6" />,
-      title: "Release Tracking",
-      description: "Monitor the health of every release and quickly identify issues in new deployments.",
-      color: "bg-green-100 text-green-600"
+      icon: <GitBranch className="w-8 h-8" />,
+      title: "RELEASE TRACKING",
+      description: "Monitor the health of every release and quickly identify deployment issues.",
+      bgColor: "bg-neo-green",
+      iconBg: "bg-neo-pink",
+      textColor: "text-neo-black",
+      iconColor: "text-neo-black"
     },
     {
-      icon: <Users className="w-6 h-6" />,
-      title: "User Impact Analysis",
-      description: "Understand how errors affect your users and prioritize fixes based on user impact.",
-      color: "bg-orange-100 text-orange-600"
+      icon: <Users className="w-8 h-8" />,
+      title: "USER IMPACT",
+      description: "Understand how errors affect your users and prioritize fixes by impact.",
+      bgColor: "bg-neo-orange",
+      iconBg: "bg-neo-blue",
+      textColor: "text-neo-black",
+      iconColor: "text-neo-white"
     },
     {
-      icon: <Clock className="w-6 h-6" />,
-      title: "Real-time Alerts",
+      icon: <Clock className="w-8 h-8" />,
+      title: "REAL-TIME ALERTS",
       description: "Get notified instantly when critical issues occur through multiple channels.",
-      color: "bg-pink-100 text-pink-600"
+      bgColor: "bg-neo-pink",
+      iconBg: "bg-neo-black",
+      textColor: "text-neo-black",
+      iconColor: "text-neo-white"
     },
     {
-      icon: <Shield className="w-6 h-6" />,
-      title: "Security & Compliance",
-      description: "Enterprise-grade security with SOC 2 compliance and data residency options.",
-      color: "bg-blue-100 text-blue-600"
+      icon: <Shield className="w-8 h-8" />,
+      title: "SECURITY & COMPLIANCE",
+      description: "Enterprise-grade security with SOC 2 compliance and data residency.",
+      bgColor: "bg-neo-blue",
+      iconBg: "bg-neo-white",
+      textColor: "text-neo-white",
+      iconColor: "text-neo-black"
     }
   ];
 
   return (
-    <section id="features" className="py-32">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="features" className="py-32 relative">
+      <div className="absolute inset-0 neo-grid-pattern opacity-5"></div>
+      
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
-            Everything you need to
-            <span className="block bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">
-              monitor your apps
-            </span>
+          <h2 className="text-5xl md:text-7xl font-display font-black text-neo-black mb-6 leading-none">
+            <span className="block">EVERYTHING YOU NEED</span>
+            <span className="block mt-4">TO <span className="bg-neo-pink text-neo-black px-4 py-2 inline-block border-[3px] border-neo-black shadow-neo-lg rotate-2">MONITOR</span> YOUR APPS</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
+          <p className="text-xl font-display font-bold text-neo-black max-w-3xl mx-auto uppercase">
             Comprehensive application monitoring that helps you ship better software faster
           </p>
         </div>
@@ -60,15 +78,15 @@ const Features = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group bg-gray-50/50 border border-gray-200/50 rounded-2xl p-8 hover:bg-white hover:shadow-lg hover:border-gray-300/50 transition-all duration-300"
+              className={`group ${feature.bgColor} border-[3px] border-neo-black p-8 shadow-neo-lg hover:shadow-neo hover:translate-x-2 hover:translate-y-2 transition-all duration-150 transform hover:-rotate-1`}
             >
-              <div className={`inline-flex items-center justify-center w-12 h-12 ${feature.color} rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                {feature.icon}
+              <div className={`inline-flex items-center justify-center w-16 h-16 ${feature.iconBg} border-[3px] border-neo-black mb-6 shadow-neo group-hover:rotate-12 transition-transform duration-300`}>
+                <span className={feature.iconColor}>{feature.icon}</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className={`text-2xl font-display font-black ${feature.textColor} mb-4`}>
                 {feature.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className={`${feature.textColor} font-bold leading-relaxed`}>
                 {feature.description}
               </p>
             </div>
@@ -76,8 +94,8 @@ const Features = () => {
         </div>
 
         <div className="text-center">
-          <button className="bg-black text-white px-8 py-4 rounded-xl text-base font-medium hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl">
-            Explore All Features
+          <button className="bg-neo-black text-neo-white px-10 py-5 border-[3px] border-neo-black font-display font-bold text-lg uppercase tracking-wider shadow-neo-xl hover:shadow-neo hover:translate-x-2 hover:translate-y-2 transition-all duration-150 transform hover:rotate-1">
+            EXPLORE ALL FEATURES →
           </button>
         </div>
       </div>

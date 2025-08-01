@@ -1,12 +1,12 @@
 import React from 'react';
-import { Check, ArrowRight } from 'lucide-react';
+import { Check, ArrowRight, Zap } from 'lucide-react';
 
 const Pricing = () => {
   const plans = [
     {
-      name: "Developer",
-      price: "Free",
-      description: "Perfect for personal projects and learning",
+      name: "DEVELOPER",
+      price: "FREE",
+      description: "Perfect for personal projects",
       features: [
         "5,000 errors per month",
         "30 days data retention",
@@ -14,14 +14,19 @@ const Pricing = () => {
         "Basic integrations",
         "Community support"
       ],
-      cta: "Get Started",
+      cta: "GET STARTED",
+      bgColor: "bg-neo-white",
+      borderColor: "border-neo-black",
+      textColor: "text-neo-black",
+      ctaBg: "bg-neo-green",
+      ctaText: "text-neo-black",
       popular: false
     },
     {
-      name: "Team",
+      name: "TEAM",
       price: "$26",
-      period: "/month",
-      description: "Ideal for small teams and growing projects",
+      period: "/MONTH",
+      description: "Ideal for growing teams",
       features: [
         "100,000 errors per month",
         "90 days data retention",
@@ -31,14 +36,19 @@ const Pricing = () => {
         "Performance monitoring",
         "Priority support"
       ],
-      cta: "Start Trial",
+      cta: "START TRIAL",
+      bgColor: "bg-neo-pink",
+      borderColor: "border-neo-black",
+      textColor: "text-neo-black",
+      ctaBg: "bg-neo-black",
+      ctaText: "text-neo-white",
       popular: true
     },
     {
-      name: "Organization", 
+      name: "ORGANIZATION", 
       price: "$80",
-      period: "/month",
-      description: "For larger teams with advanced needs",
+      period: "/MONTH",
+      description: "For larger teams",
       features: [
         "1,000,000 errors per month", 
         "Unlimited data retention",
@@ -49,22 +59,29 @@ const Pricing = () => {
         "Dedicated support",
         "SLA guarantee"
       ],
-      cta: "Contact Sales",
+      cta: "CONTACT SALES",
+      bgColor: "bg-neo-blue",
+      borderColor: "border-neo-black",
+      textColor: "text-neo-white",
+      ctaBg: "bg-neo-yellow",
+      ctaText: "text-neo-black",
       popular: false
     }
   ];
 
   return (
-    <section id="pricing" className="py-32">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="pricing" className="py-32 relative">
+      <div className="absolute inset-0 neo-dots-pattern opacity-5"></div>
+      
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
-            Simple, transparent
-            <span className="block bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">
-              pricing
+          <h2 className="text-5xl md:text-7xl font-display font-black text-neo-black mb-6 leading-none">
+            <span className="block">SIMPLE, TRANSPARENT</span>
+            <span className="block mt-4">
+              <span className="bg-neo-orange text-neo-black px-4 py-2 inline-block border-[3px] border-neo-black shadow-neo-lg -rotate-2">PRICING</span>
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
+          <p className="text-xl font-display font-bold text-neo-black max-w-3xl mx-auto uppercase">
             Start free, scale as you grow. No hidden fees, no surprises.
           </p>
         </div>
@@ -73,58 +90,55 @@ const Pricing = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative bg-white border rounded-3xl p-8 transition-all duration-300 hover:shadow-xl ${
+              className={`relative ${plan.bgColor} border-[4px] ${plan.borderColor} p-8 transition-all duration-150 transform ${
                 plan.popular 
-                  ? 'border-black shadow-lg scale-105' 
-                  : 'border-gray-200 hover:border-gray-300'
+                  ? 'shadow-neo-xl scale-105 -rotate-1' 
+                  : 'shadow-neo-lg hover:shadow-neo hover:translate-x-2 hover:translate-y-2'
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-black text-white px-4 py-2 rounded-full text-sm font-medium">
-                    Most Popular
+                <div className="absolute -top-5 -right-5 bg-neo-red text-neo-white px-4 py-2 border-[3px] border-neo-black shadow-neo rotate-12">
+                  <span className="font-display font-bold text-sm flex items-center gap-2">
+                    <Zap className="w-4 h-4" />
+                    MOST POPULAR
                   </span>
                 </div>
               )}
 
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
+                <h3 className={`text-3xl font-display font-black ${plan.textColor} mb-4`}>{plan.name}</h3>
                 <div className="mb-4">
-                  <span className="text-5xl font-bold text-gray-900">{plan.price}</span>
-                  {plan.period && <span className="text-gray-600 text-lg">{plan.period}</span>}
+                  <span className={`text-6xl font-display font-black ${plan.textColor}`}>{plan.price}</span>
+                  {plan.period && <span className={`${plan.textColor} text-xl font-bold`}>{plan.period}</span>}
                 </div>
-                <p className="text-gray-600">{plan.description}</p>
+                <p className={`${plan.textColor} font-bold uppercase`}>{plan.description}</p>
               </div>
 
-              <ul className="space-y-4 mb-8">
+              <ul className="space-y-3 mb-8">
                 {plan.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center space-x-3">
-                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
-                      <Check className="w-3 h-3 text-green-600" />
+                  <li key={featureIndex} className="flex items-start space-x-3">
+                    <div className={`flex-shrink-0 w-6 h-6 ${plan.textColor === 'text-neo-white' ? 'bg-neo-white text-neo-black' : 'bg-neo-black text-neo-white'} flex items-center justify-center border-[2px] border-neo-black mt-0.5`}>
+                      <Check className="w-4 h-4 font-bold" />
                     </div>
-                    <span className="text-gray-700">{feature}</span>
+                    <span className={`${plan.textColor} font-bold`}>{feature}</span>
                   </li>
                 ))}
               </ul>
 
-              <button className={`w-full py-4 px-6 rounded-xl font-medium transition-all duration-300 flex items-center justify-center space-x-2 ${
-                plan.popular
-                  ? 'bg-black text-white hover:bg-gray-800 shadow-lg hover:shadow-xl'
-                  : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-              }`}>
+              <button className={`w-full py-4 px-6 ${plan.ctaBg} ${plan.ctaText} border-[3px] border-neo-black font-display font-bold uppercase tracking-wider transition-all duration-150 shadow-neo hover:shadow-neo-hover hover:translate-x-1 hover:translate-y-1 flex items-center justify-center space-x-2`}>
                 <span>{plan.cta}</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-5 h-5" />
               </button>
             </div>
           ))}
         </div>
 
-        <div className="text-center">
-          <p className="text-gray-600 mb-6">
+        <div className="text-center bg-neo-purple border-[3px] border-neo-black p-8 shadow-neo-lg max-w-2xl mx-auto transform rotate-1">
+          <p className="text-neo-white font-display font-bold text-lg mb-4 uppercase">
             Need a custom plan? We offer volume discounts and enterprise features.
           </p>
-          <button className="text-black hover:text-gray-700 font-medium transition-colors duration-200">
-            Contact our sales team →
+          <button className="bg-neo-white text-neo-black px-8 py-3 border-[3px] border-neo-black font-display font-bold uppercase tracking-wider shadow-neo hover:shadow-neo-hover hover:translate-x-1 hover:translate-y-1 transition-all duration-150">
+            CONTACT OUR SALES TEAM →
           </button>
         </div>
       </div>
