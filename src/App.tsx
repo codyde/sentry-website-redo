@@ -9,7 +9,10 @@ import PricingPage from './pages/PricingPage';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-neo-yellow relative overflow-hidden">
+        {/* Neo-brutalist background pattern */}
+        <div className="absolute inset-0 neo-dots-pattern opacity-10"></div>
+        
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />

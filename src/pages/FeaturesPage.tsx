@@ -4,45 +4,63 @@ import { AlertTriangle, BarChart3, GitBranch, Users, Clock, Shield } from 'lucid
 const FeaturesPage = () => {
   const features = [
     {
-      icon: <AlertTriangle className="w-6 h-6" />,
-      title: "Error Monitoring",
-      description: "Catch every error, exception, and crash in real-time with detailed stack traces and context. Get comprehensive error tracking across all your applications.",
-      color: "bg-red-100 text-red-600",
+      icon: <AlertTriangle className="w-10 h-10" />,
+      title: "ERROR MONITORING",
+      description: "CATCH EVERY ERROR, EXCEPTION, AND CRASH IN REAL-TIME WITH DETAILED STACK TRACES AND CONTEXT. GET COMPREHENSIVE ERROR TRACKING ACROSS ALL YOUR APPLICATIONS.",
+      bgColor: "bg-neo-red",
+      iconBg: "bg-neo-yellow",
+      textColor: "text-neo-white",
+      iconColor: "text-neo-black",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
-      icon: <BarChart3 className="w-6 h-6" />,
-      title: "Performance Monitoring",
-      description: "Track application performance, identify bottlenecks, and optimize user experience. Monitor response times, throughput, and resource usage.",
-      color: "bg-purple-100 text-purple-600",
+      icon: <BarChart3 className="w-10 h-10" />,
+      title: "PERFORMANCE MONITORING",
+      description: "TRACK APPLICATION PERFORMANCE, IDENTIFY BOTTLENECKS, AND OPTIMIZE USER EXPERIENCE. MONITOR RESPONSE TIMES, THROUGHPUT, AND RESOURCE USAGE.",
+      bgColor: "bg-neo-purple",
+      iconBg: "bg-neo-green",
+      textColor: "text-neo-white",
+      iconColor: "text-neo-black",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80"
     },
     {
-      icon: <GitBranch className="w-6 h-6" />,
-      title: "Release Tracking",
-      description: "Monitor the health of every release and quickly identify issues in new deployments. Track deployment success and rollback when needed.",
-      color: "bg-green-100 text-green-600",
+      icon: <GitBranch className="w-10 h-10" />,
+      title: "RELEASE TRACKING",
+      description: "MONITOR THE HEALTH OF EVERY RELEASE AND QUICKLY IDENTIFY ISSUES IN NEW DEPLOYMENTS. TRACK DEPLOYMENT SUCCESS AND ROLLBACK WHEN NEEDED.",
+      bgColor: "bg-neo-green",
+      iconBg: "bg-neo-pink",
+      textColor: "text-neo-black",
+      iconColor: "text-neo-black",
       image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2076&q=80"
     },
     {
-      icon: <Users className="w-6 h-6" />,
-      title: "User Impact Analysis",
-      description: "Understand how errors affect your users and prioritize fixes based on user impact. Get detailed user session replays and analytics.",
-      color: "bg-orange-100 text-orange-600",
+      icon: <Users className="w-10 h-10" />,
+      title: "USER IMPACT ANALYSIS",
+      description: "UNDERSTAND HOW ERRORS AFFECT YOUR USERS AND PRIORITIZE FIXES BASED ON USER IMPACT. GET DETAILED USER SESSION REPLAYS AND ANALYTICS.",
+      bgColor: "bg-neo-orange",
+      iconBg: "bg-neo-blue",
+      textColor: "text-neo-black",
+      iconColor: "text-neo-white",
       image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
     },
     {
-      icon: <Clock className="w-6 h-6" />,
-      title: "Real-time Alerts",
-      description: "Get notified instantly when critical issues occur through multiple channels. Configure smart alerts that reduce noise and focus on what matters.",
-      color: "bg-pink-100 text-pink-600",
+      icon: <Clock className="w-10 h-10" />,
+      title: "REAL-TIME ALERTS",
+      description: "GET NOTIFIED INSTANTLY WHEN CRITICAL ISSUES OCCUR THROUGH MULTIPLE CHANNELS. CONFIGURE SMART ALERTS THAT REDUCE NOISE AND FOCUS ON WHAT MATTERS.",
+      bgColor: "bg-neo-pink",
+      iconBg: "bg-neo-black",
+      textColor: "text-neo-black",
+      iconColor: "text-neo-white",
       image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2076&q=80"
     },
     {
-      icon: <Shield className="w-6 h-6" />,
-      title: "Security & Compliance",
-      description: "Enterprise-grade security with SOC 2 compliance and data residency options. Keep your sensitive data secure with advanced encryption.",
-      color: "bg-blue-100 text-blue-600",
+      icon: <Shield className="w-10 h-10" />,
+      title: "SECURITY & COMPLIANCE",
+      description: "ENTERPRISE-GRADE SECURITY WITH SOC 2 COMPLIANCE AND DATA RESIDENCY OPTIONS. KEEP YOUR SENSITIVE DATA SECURE WITH ADVANCED ENCRYPTION.",
+      bgColor: "bg-neo-blue",
+      iconBg: "bg-neo-white",
+      textColor: "text-neo-white",
+      iconColor: "text-neo-black",
       image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     }
   ];
@@ -51,13 +69,14 @@ const FeaturesPage = () => {
     <div className="pt-24 pb-32">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-20">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
-            Powerful Features for
-            <span className="block bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">
-              Modern Development
+          <h1 className="text-5xl md:text-7xl font-display font-black text-neo-black mb-6 leading-none">
+            <span className="block">POWERFUL FEATURES FOR</span>
+            <span className="block mt-4">
+              <span className="bg-neo-pink text-neo-black px-4 py-2 inline-block border-[3px] border-neo-black shadow-neo-lg rotate-2">MODERN</span>
+              {' '}DEVELOPMENT
             </span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
+          <p className="text-xl font-display font-bold text-neo-black max-w-3xl mx-auto uppercase">
             Comprehensive application monitoring that helps you ship better software faster with advanced debugging and performance insights
           </p>
         </div>
@@ -69,42 +88,44 @@ const FeaturesPage = () => {
               className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12 lg:gap-16`}
             >
               <div className="flex-1">
-                <div className={`inline-flex items-center justify-center w-16 h-16 ${feature.color} rounded-2xl mb-6`}>
-                  {feature.icon}
+                <div className={`inline-flex items-center justify-center w-20 h-20 ${feature.iconBg} border-[3px] border-neo-black mb-6 shadow-neo transform -rotate-6`}>
+                  <span className={feature.iconColor}>{feature.icon}</span>
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                <h2 className={`text-4xl md:text-5xl font-display font-black text-neo-black mb-6`}>
                   {feature.title}
                 </h2>
-                <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                  {feature.description}
-                </p>
-                <button className="bg-black text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-gray-800 transition-all duration-300">
-                  Learn More
+                <div className={`${feature.bgColor} ${feature.textColor} p-6 border-[3px] border-neo-black shadow-neo-lg mb-8`}>
+                  <p className="font-bold leading-tight text-lg">
+                    {feature.description}
+                  </p>
+                </div>
+                <button className="bg-neo-black text-neo-white px-8 py-4 border-[3px] border-neo-black font-display font-bold uppercase tracking-wider shadow-neo hover:shadow-neo-hover hover:translate-x-1 hover:translate-y-1 transition-all duration-150">
+                  LEARN MORE →
                 </button>
               </div>
               <div className="flex-1">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <div className={`relative border-[4px] border-neo-black overflow-hidden shadow-neo-xl transform ${index % 2 === 0 ? 'rotate-2' : '-rotate-2'}`}>
                   <img
                     src={feature.image}
                     alt={feature.title}
                     className="w-full h-80 object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-neo-black/20 to-transparent"></div>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-20">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Ready to get started?
+        <div className="text-center mt-20 bg-neo-purple border-[4px] border-neo-black p-12 shadow-neo-xl transform -rotate-1">
+          <h3 className="text-4xl font-display font-black text-neo-white mb-4">
+            READY TO GET STARTED?
           </h3>
-          <p className="text-gray-600 mb-8">
+          <p className="text-neo-white font-bold mb-8 uppercase text-lg">
             Join thousands of developers who trust Sentry to monitor their applications
           </p>
-          <button className="bg-black text-white px-8 py-4 rounded-xl text-base font-medium hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl">
-            Start Free Trial
+          <button className="bg-neo-yellow text-neo-black px-10 py-5 border-[3px] border-neo-black font-display font-bold text-lg uppercase tracking-wider shadow-neo hover:shadow-neo-hover hover:translate-x-1 hover:translate-y-1 transition-all duration-150">
+            START FREE TRIAL →
           </button>
         </div>
       </div>

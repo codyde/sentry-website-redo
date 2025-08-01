@@ -1,3 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-body antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+  }
+}
+
+@layer components {
+  .neo-brutal-card {
+    @apply bg-neo-white border-[3px] border-neo-black shadow-neo;
+  }
+  
+  .neo-brutal-button {
+    @apply border-[3px] border-neo-black shadow-neo font-bold uppercase tracking-wider transition-all duration-150;
+  }
+  
+  .neo-brutal-button:hover {
+    @apply shadow-neo-hover translate-x-1 translate-y-1;
+  }
+  
+  .neo-brutal-button:active {
+    @apply shadow-none translate-x-[6px] translate-y-[6px];
+  }
+}
+
+/* Custom neo-brutalist patterns */
+.neo-dots-pattern {
+  background-image: radial-gradient(circle, #000 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.neo-grid-pattern {
+  background-image: 
+    linear-gradient(#000 2px, transparent 2px),
+    linear-gradient(90deg, #000 2px, transparent 2px);
+  background-size: 40px 40px;
+}
+
+/* Remove all rounded corners globally for brutalist aesthetic */
+* {
+  border-radius: 0 !important;
+}

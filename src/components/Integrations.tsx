@@ -2,65 +2,68 @@ import React from 'react';
 
 const Integrations = () => {
   const integrations = [
-    { name: 'React', logo: '⚛️', color: 'bg-blue-50 hover:bg-blue-100' },
-    { name: 'Vue.js', logo: '🟢', color: 'bg-green-50 hover:bg-green-100' },
-    { name: 'Angular', logo: '🅰️', color: 'bg-red-50 hover:bg-red-100' },
-    { name: 'Node.js', logo: '🟢', color: 'bg-green-50 hover:bg-green-100' },
-    { name: 'Python', logo: '🐍', color: 'bg-yellow-50 hover:bg-yellow-100' },
-    { name: 'Django', logo: '🎯', color: 'bg-green-50 hover:bg-green-100' },
-    { name: 'Ruby', logo: '💎', color: 'bg-red-50 hover:bg-red-100' },
-    { name: 'PHP', logo: '🐘', color: 'bg-purple-50 hover:bg-purple-100' },
-    { name: 'Java', logo: '☕', color: 'bg-orange-50 hover:bg-orange-100' },
-    { name: 'C#', logo: '#️⃣', color: 'bg-purple-50 hover:bg-purple-100' },
-    { name: 'Go', logo: '🐹', color: 'bg-blue-50 hover:bg-blue-100' },
-    { name: 'Rust', logo: '🦀', color: 'bg-orange-50 hover:bg-orange-100' }
+    { name: 'REACT', logo: '⚛️', bgColor: 'bg-neo-blue', textColor: 'text-neo-white' },
+    { name: 'VUE.JS', logo: '🟢', bgColor: 'bg-neo-green', textColor: 'text-neo-black' },
+    { name: 'ANGULAR', logo: '🅰️', bgColor: 'bg-neo-red', textColor: 'text-neo-white' },
+    { name: 'NODE.JS', logo: '🟢', bgColor: 'bg-neo-purple', textColor: 'text-neo-white' },
+    { name: 'PYTHON', logo: '🐍', bgColor: 'bg-neo-yellow', textColor: 'text-neo-black' },
+    { name: 'DJANGO', logo: '🎯', bgColor: 'bg-neo-pink', textColor: 'text-neo-black' },
+    { name: 'RUBY', logo: '💎', bgColor: 'bg-neo-red', textColor: 'text-neo-white' },
+    { name: 'PHP', logo: '🐘', bgColor: 'bg-neo-purple', textColor: 'text-neo-white' },
+    { name: 'JAVA', logo: '☕', bgColor: 'bg-neo-orange', textColor: 'text-neo-black' },
+    { name: 'C#', logo: '#️⃣', bgColor: 'bg-neo-blue', textColor: 'text-neo-white' },
+    { name: 'GO', logo: '🐹', bgColor: 'bg-neo-green', textColor: 'text-neo-black' },
+    { name: 'RUST', logo: '🦀', bgColor: 'bg-neo-orange', textColor: 'text-neo-black' }
   ];
 
   return (
-    <section id="integrations" className="py-32">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="integrations" className="py-32 relative">
+      <div className="absolute inset-0 neo-grid-pattern opacity-5"></div>
+      
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
-            Works with your
-            <span className="block bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">
-              favorite technologies
+          <h2 className="text-5xl md:text-7xl font-display font-black text-neo-black mb-6 leading-none">
+            <span className="block">WORKS WITH YOUR</span>
+            <span className="block mt-4">
+              <span className="bg-neo-blue text-neo-white px-4 py-2 inline-block border-[3px] border-neo-black shadow-neo-lg -rotate-2">FAVORITE</span>
+              {' '}TECH
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
+          <p className="text-xl font-display font-bold text-neo-black max-w-3xl mx-auto uppercase">
             Seamlessly integrate with 100+ platforms, frameworks, and languages
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 mb-16">
           {integrations.map((integration, index) => (
             <div
               key={index}
-              className={`group ${integration.color} border border-gray-200/50 rounded-2xl p-6 transition-all duration-300 hover:shadow-md text-center`}
+              className={`group ${integration.bgColor} border-[3px] border-neo-black p-6 transition-all duration-150 shadow-neo hover:shadow-neo-hover hover:translate-x-1 hover:translate-y-1 text-center transform hover:rotate-6`}
             >
-              <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="text-5xl mb-4 group-hover:scale-125 transition-transform duration-300">
                 {integration.logo}
               </div>
-              <h3 className="text-sm font-medium text-gray-900">
+              <h3 className={`font-display font-bold ${integration.textColor} text-sm`}>
                 {integration.name}
               </h3>
             </div>
           ))}
         </div>
 
-        <div className="bg-white border border-gray-200/50 rounded-3xl p-12 text-center shadow-sm">
-          <h3 className="text-3xl font-bold text-gray-900 mb-4">
-            Don't see your stack?
+        <div className="bg-neo-purple border-[4px] border-neo-black p-12 text-center shadow-neo-xl transform rotate-1">
+          <h3 className="text-4xl font-display font-black text-neo-white mb-4">
+            DON'T SEE YOUR STACK?
           </h3>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-neo-white font-bold mb-8 max-w-2xl mx-auto uppercase text-lg">
             We support 100+ platforms and languages. If you don't see yours, 
             our universal SDK can help you get started in minutes.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <button className="bg-black text-white px-6 py-3 rounded-xl font-medium hover:bg-gray-800 transition-colors duration-200">
-              View All Integrations
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+            <button className="bg-neo-black text-neo-white px-8 py-4 border-[3px] border-neo-white font-display font-bold uppercase tracking-wider shadow-neo hover:shadow-neo-hover hover:translate-x-1 hover:translate-y-1 transition-all duration-150">
+              VIEW ALL INTEGRATIONS →
             </button>
-            <button className="text-gray-700 border border-gray-300 px-6 py-3 rounded-xl font-medium hover:bg-gray-50 transition-colors duration-200">
-              Custom SDK Docs
+            <button className="bg-neo-yellow text-neo-black px-8 py-4 border-[3px] border-neo-black font-display font-bold uppercase tracking-wider shadow-neo hover:shadow-neo-hover hover:translate-x-1 hover:translate-y-1 transition-all duration-150">
+              CUSTOM SDK DOCS →
             </button>
           </div>
         </div>
